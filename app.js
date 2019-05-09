@@ -7,13 +7,11 @@ var logger = require('morgan');
 
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+require('dotenv');
 
-mongoose.connect(
-    'mongodb+srv://socket:wuphf1111@cluster0-r4khn.mongodb.net/socket-mongoose?retryWrites=true',
-    {
-        useNewUrlParser: true
-    }
-);
+mongoose.connect(process.env.MONGODB_URL, {
+    useNewUrlParser: true
+});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
