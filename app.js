@@ -7,7 +7,7 @@ var logger = require('morgan');
 
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-require('dotenv');
+require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true
